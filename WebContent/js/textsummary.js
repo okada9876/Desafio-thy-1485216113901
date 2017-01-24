@@ -116,13 +116,13 @@ var textSummary = (function (provider, translatorFactory) {
       case 2:
         // Report 1 adjective.
         adj = getCircumplexAdjective(relevantBig5[0], relevantBig5[1], 0);
-        sentences.push(format(tphrase('You are %s'), adj) + '.!   ;-)');
+        sentences.push(format(tphrase('You are %s'), adj) + '.1');
         break;
       case 3:
         // Report 2 adjectives.
         adj1 = getCircumplexAdjective(relevantBig5[0], relevantBig5[1], 0);
         adj2 = getCircumplexAdjective(relevantBig5[1], relevantBig5[2], 1);      
-        sentences.push(format(tphrase('You are %s and %s'),  adj1, adj2) + '....');
+        sentences.push(format(tphrase('You are %s and %s'),  adj1, adj2) + '.2');
         break;
       case 4:
       case 5:
@@ -130,7 +130,7 @@ var textSummary = (function (provider, translatorFactory) {
         adj1 = getCircumplexAdjective(relevantBig5[0], relevantBig5[1], 0);
         adj2 = getCircumplexAdjective(relevantBig5[1], relevantBig5[2], 1);
         adj3 = getCircumplexAdjective(relevantBig5[2], relevantBig5[3], 2);
-        sentences.push(format(tphrase('You are %s, %s and %s'),  adj1, adj2, adj3) + '.');
+        sentences.push(format(tphrase('You are %s, %s and %s'),  adj1, adj2, adj3) + '.3');
         break;
     }
   
@@ -156,9 +156,9 @@ var textSummary = (function (provider, translatorFactory) {
   
     // Assemble an adjective and description for the two most important facets.
     var info = getFacetInfo(facetElements[0]);
-    sentences.push(format(tphrase('You are %s'), info.term) + ': ' + info.description + '.');
+    sentences.push(format(tphrase('You are %s'), info.term) + ': ' + info.description + '.4');
     info = getFacetInfo(facetElements[1]);
-    sentences.push(format(tphrase('You are %s'), info.term) + ': ' + info.description + '.');
+    sentences.push(format(tphrase('You are %s'), info.term) + ': ' + info.description + '.5');
   
     // If all the facets correspond to the same feature, continue until a
     // different parent feature is found.
@@ -169,7 +169,7 @@ var textSummary = (function (provider, translatorFactory) {
       }
     }
     info = getFacetInfo(facetElements[i]);
-    sentences.push(format(tphrase('And you are %s'), info.term)+ ': ' + info.description + '.');
+    sentences.push(format(tphrase('And you are %s'), info.term)+ ': ' + info.description + '.6');
   
     return sentences;
   }
@@ -204,23 +204,23 @@ var textSummary = (function (provider, translatorFactory) {
           term2 = info2.term;
       switch (intervalFor(valuesList[0].percentage)) {
         case 0:
-          sentence = format(tphrase('You are relatively unconcerned with both %s and %s'), term1, term2) + '.';
+          sentence = format(tphrase('You are relatively unconcerned with both %s and %s'), term1, term2) + '.7';
           break;
         case 1:
-          sentence = format(tphrase("You don't find either %s or %s to be particularly motivating for you"), term1, term2) + '.';
+          sentence = format(tphrase("You don't find either %s or %s to be particularly motivating for you"), term1, term2) + '.8';
           break;
         case 2:
-          sentence = format(tphrase('You value both %s and %s a bit'), term1, term2) + '.';
+          sentence = format(tphrase('You value both %s and %s a bit'), term1, term2) + '.9';
           break;
         case 3:
-          sentence = format(tphrase('You consider both %s and %s to guide a large part of what you do'), term1, term2) + '.';      
+          sentence = format(tphrase('You consider both %s and %s to guide a large part of what you do'), term1, term2) + '.10';      
           break;
       }
       sentences.push(sentence);
   
       // Assemble the final strings in the correct format.
       sentences.push(info1.description + '.');
-      sentences.push(format(tphrase('And %s'), info2.description.toLowerCase()) + '.');
+      sentences.push(format(tphrase('And %s'), info2.description.toLowerCase()) + '.11');
     } else {
       var valuesInfo = [info1, info2];
       for (var i = 0; i < valuesInfo.length; i++) {
@@ -239,7 +239,7 @@ var textSummary = (function (provider, translatorFactory) {
             sentence = format(tphrase('You consider %s to guide a large part of what you do'),  valuesInfo[i].term)          
             break;
         }
-        sentence = sentence.concat(': ').
+        sentence = sentence.concat(': 12').
             concat(valuesInfo[i].description.toLowerCase()).
             concat('.');
         sentences.push(sentence);
@@ -283,7 +283,7 @@ var textSummary = (function (provider, translatorFactory) {
         sentence = tphrase('Your choices are driven by a desire for %s');
         break;
     }
-    sentence = format(sentence, word).concat(".");
+    sentence = format(sentence, word).concat(".13");
     sentences.push(sentence);
   
     return sentences;

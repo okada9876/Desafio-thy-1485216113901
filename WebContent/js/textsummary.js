@@ -122,7 +122,7 @@ var textSummary = (function (provider, translatorFactory) {
         // Report 2 adjectives.
         adj1 = getCircumplexAdjective(relevantBig5[0], relevantBig5[1], 0);
         adj2 = getCircumplexAdjective(relevantBig5[1], relevantBig5[2], 1);      
-        sentences.push(format(tphrase('You are %s and %s'),  adj1, adj2) + '.');
+        sentences.push(format(tphrase('You are %s and %s'),  adj1, adj2) + '....');
         break;
       case 4:
       case 5:

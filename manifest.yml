@@ -1,0 +1,10 @@
+applications:
+- path: output/webApp.war
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: Desafio-thy
+  host: Desafio-thy
+  disk_quota: 1024M
+  services:
+  - Desafio-thy-personality_insights

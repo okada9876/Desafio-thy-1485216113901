@@ -116,7 +116,7 @@ var textSummary = (function (provider, translatorFactory) {
       case 2:
         // Report 1 adjective.
         adj = getCircumplexAdjective(relevantBig5[0], relevantBig5[1], 0);
-        sentences.push(format(tphrase('You are %s'), adj) + '.');
+        sentences.push(format(tphrase('You are %s'), adj) + '.!   ;-)');
         break;
       case 3:
         // Report 2 adjectives.

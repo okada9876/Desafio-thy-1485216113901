@@ -83,8 +83,8 @@ $(document).ready(function() {
         } else {
           $results.show();
           showTraits(response);
-          showTextSummary(response);
-          showVizualization(response);
+          /*showTextSummary(response);
+          showVizualization(response);*/
         }
 
       },
